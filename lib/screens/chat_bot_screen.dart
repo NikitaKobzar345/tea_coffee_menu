@@ -45,8 +45,15 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
             children: [
               Expanded(
                 child: ListView(
-                  children: state.messages
-                      .map((messageBubble) => MessageBubble(messageBubble))
+                  children: state.messagesFromMe
+                      .map((message) => MessageBubble(message))
+                      .toList(),
+                ),
+              ),
+              Expanded(
+                child: ListView(
+                  children: state.messagesFromBot
+                      .map((message) => MessageBubble(message))
                       .toList(),
                 ),
               ),
@@ -91,15 +98,3 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
     );
   }
 }
-/*IconButton(
-                    icon: const Icon(
-                      Icons.send,
-                      color: Colors.black,
-                    ),
-                    onPressed: () {
-                      _chatBotBloc.add(
-                        SendMessageEvent(message: _chatTextController.text),
-                      );
-                      _chatTextController.clear();
-                    },
-                  ), */

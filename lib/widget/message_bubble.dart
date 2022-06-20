@@ -23,14 +23,23 @@ class _MessageBubbleState extends State<MessageBubble> {
           widget.message.text,
           style: const TextStyle(color: Colors.white, fontSize: 16.0),
         ),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-          ),
-          color: Colors.black,
-        ),
+        decoration: widget.message.fromMe
+            ? const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
+                color: Colors.black87,
+              )
+            : const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                  bottomLeft: Radius.circular(15),
+                ),
+                color: Colors.black,
+              ),
       ),
     );
   }

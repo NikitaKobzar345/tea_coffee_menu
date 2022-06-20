@@ -3,6 +3,7 @@ import 'package:menu/screens/achiviements_screen.dart';
 import 'package:menu/screens/chat_bot_screen.dart';
 import 'package:menu/screens/favourites_screen.dart';
 import 'package:menu/screens/menu_screen.dart';
+import 'package:menu/screens/my_beverages_screen.dart';
 
 class BottomNavigationBarTamplate extends StatefulWidget {
   const BottomNavigationBarTamplate({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _BottomNavigationBarTamplateState
     const AchiviementsScreen(),
     const FavouritesScreen(),
     const ChatBotScreen(),
+    const MyBeveragesScreen()
   ];
 
   @override
@@ -49,6 +51,9 @@ class _BottomNavigationBarTamplateState
           BottomNavigationBarItem(
               icon: Icon(Icons.chat_bubble_outline_rounded),
               label: 'Чат - бот'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.emoji_food_beverage_sharp),
+              label: 'Мои напитки'),
         ],
       ),
       body: _screens[_navBarIndex],
